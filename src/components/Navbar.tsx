@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Packages", href: "#packages" },
-    { name: "How It Works", href: "#how-it-works" },
+    { name: "Services", href: "/services" },
+    { name: "Packages", href: "/#packages" },
+    { name: "How It Works", href: "/#how-it-works" },
   ];
 
   return (
@@ -16,12 +17,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
               <span className="font-display font-bold text-primary-foreground text-sm">T</span>
             </div>
             <span className="font-display font-bold text-xl text-foreground">Trivio Digital</span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
