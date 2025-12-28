@@ -8,8 +8,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Services", href: "/services" },
-    { name: "Packages", href: "/#packages" },
-    { name: "How It Works", href: "/#how-it-works" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "How It Works", href: "/how-it-works" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -27,13 +29,13 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -61,14 +63,14 @@ const Navbar = () => {
           <div className="md:hidden py-4 border-t border-border/50">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
                 <Button variant="ghost" size="sm" className="justify-start">
