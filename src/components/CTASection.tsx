@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, MessageCircle } from "lucide-react";
+import { WHATSAPP_LINK } from "@/lib/constants";
 
 const CTASection = () => {
   return (
@@ -26,13 +27,18 @@ const CTASection = () => {
               </h2>
 
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-10">
-                Join 200+ brands that have transformed their growth with Trivio Digital. 
+                Join 250+ brands that have transformed their growth with Trivio Digital. 
                 Book your free strategy call today and discover untapped opportunities.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="hero" size="lg" className="group w-full sm:w-auto">
-                  <Calendar className="w-5 h-5" />
+                <Button 
+                  variant="hero" 
+                  size="lg" 
+                  className="group w-full sm:w-auto"
+                  onClick={() => window.open(WHATSAPP_LINK, "_blank")}
+                >
+                  <MessageCircle className="w-5 h-5" />
                   Book Free Strategy Call
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

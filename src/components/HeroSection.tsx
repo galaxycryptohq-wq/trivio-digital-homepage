@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, MessageCircle } from "lucide-react";
+import { WHATSAPP_LINK } from "@/lib/constants";
 
 const HeroSection = () => {
   return (
@@ -23,7 +24,7 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-8 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-muted-foreground">Trusted by 200+ Growing Brands</span>
+            <span className="text-sm text-muted-foreground">Trusted by 250+ Growing Brands</span>
           </div>
 
           {/* Headline */}
@@ -40,7 +41,13 @@ const HeroSection = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <Button variant="hero" size="lg" className="group w-full sm:w-auto">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="group w-full sm:w-auto"
+              onClick={() => window.open(WHATSAPP_LINK, "_blank")}
+            >
+              <MessageCircle className="w-5 h-5" />
               Book a Free Strategy Call
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
